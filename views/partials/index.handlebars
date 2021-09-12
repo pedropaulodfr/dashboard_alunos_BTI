@@ -1,0 +1,46 @@
+<!-- Boxicons CDN Link -->
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="sidebar">
+  <div class="logo_content">
+    <div class="logo">
+      <i class='bx bxl-dailymotion' ></i>
+      <div class="logo_name">Dashboard</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Procurar...">
+          <span class="tooltip">Procurar</span>
+      </li>
+      <li>
+        <form action="/ch_cumprida" method="POST" id="form-ch">
+            <a href="javascript:document.getElementById('form-ch').submit();">
+              <i class='bx bx-bar-chart-square'></i>
+              <span class="links_name">CH Cumprida</span>
+            </a>
+          <span class="tooltip">CH Cumprida</span>
+        </form> 
+      </li>
+      <li>
+        <form action="/ier" method="POST" id="form-ier">
+            <a href="javascript:document.getElementById('form-ier').submit();">
+              <i class='bx bx-bar-chart-square'></i>
+              <span class="links_name">Ingressos, egressos <br> e retenções</span>
+            </a>
+          <span class="tooltip">I, E, R</span>
+        </form> 
+      </li>
+      <li>
+        <form action="/insucessos" method="POST" id="form-insucessos">
+            <a href="javascript:document.getElementById('form-insucessos').submit();">
+              <i class='bx bx-bar-chart-square'></i>
+              <span class="links_name">insucessos</span>
+            </a>
+          <span class="tooltip">insucessos</span>
+        </form> 
+      </li>
+    </ul>
+  </div>
+</div>

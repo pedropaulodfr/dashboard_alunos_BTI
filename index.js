@@ -10,7 +10,19 @@ app.use(express.static('public'))
 
 // Rotas
 app.get("/", (req, res)=>{
-    res.render("index")
+    res.render("home")
+})
+
+app.post("/ch_cumprida", (req, res) =>{
+    res.render("ch_cumprida")
+})
+
+app.post("/ier", (req, res) =>{
+    res.render("ier")
+})
+
+app.post("/insucessos", (req, res) =>{
+    res.render("insucessos")
 })
 
 app.listen("8080", ()=>{
