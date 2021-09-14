@@ -1,25 +1,23 @@
 {{>index}}
+<section id="dadosMatriculas" style="display: none;">{{dadosMatriculas}}</section>
+<section id="dadosIntegralizacoes" style="display: none;">{{dadosIntegralizacoes}}</section>
+<section id="dadosSomaCH" style="display: none;">{{dadosSomaCH}}</section>
 
-<style>
-    #graficos-pontos{
-        margin-left: 30px;
-    }
-</style>
+<link rel="stylesheet" href="css/ch_cumprida/style.css">
+<script src="js/graficos_ch_cumprida/grafico_1.js"></script>
+<script src="js/graficos_ch_cumprida/grafico_2.js"></script>
+<script src="js/graficos_ch_cumprida/grafico_3.js"></script>
 
 <div class="home_content">
   <div class="content">
-    <div class="text"><h1>Alunos com percentual de CH. cumprida</h1></div>
+    <div class="text"><h3>Alunos com percentual de CH. cumprida</h3></div>
     <br>
     <div class="text">
-      <h2>Descrição</h2>
-      <h4>Relatório que mostra o percentual de integralização da carga horária dos alunos, bem como o status da matrícula.</h4><br>
-      <h2>Gráficos a serem extraídos</h2>
-      <ul id="graficos-pontos">
-          <li>Quantidade de matrículas ativas e trancadas;</li>
-          <li>Quais períodos têm maior média de CHs integralizadas;</li>
-          <li>Quantidade de alunos totalmente integralizados;</li>
-          <li>Quantidade de alunos com integralização nula.</li>
-      </ul>
+      <section class="flex-container">
+        <div id="piechart" class="graficos" style="width: 600px; height: 300px;"></div>
+        <div id="donutchart" class="graficos" style="width: 600px; height: 300px;"></div>
+        <div id="curve_chart" class="graficos" style="width: 600px; height: 300px"></div>
+      </section>
     </div>
   </div>
 </div>

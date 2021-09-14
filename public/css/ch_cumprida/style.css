@@ -1,0 +1,7 @@
+.flex-container{
+    display: flex;
+}
+.home_content{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
