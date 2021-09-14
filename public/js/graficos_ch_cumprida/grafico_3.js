@@ -27,7 +27,9 @@ google.charts.load('current', {'packages':['corechart']});
     var options = {
         title: 'CH Integralizadas',
         curveType: 'function',
-        legend: { position: 'bottom' }
+        legend: { position: 'bottom' },
+        colors:['#00689b','#b3d3e2'],
+        backgroundColor: "transparent",
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));

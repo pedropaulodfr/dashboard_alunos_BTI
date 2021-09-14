@@ -10,9 +10,13 @@
     </div>
     <ul class="nav_list">
       <li>
-          <i class='bx bx-search'></i>
-          <input type="text" placeholder="Procurar...">
-          <span class="tooltip">Procurar</span>
+        <form action="/" method="GET" id="form-home">
+            <a href="javascript:document.getElementById('form-home').submit();">
+              <i class='bx bx-home'></i>
+              <span class="links_name">INÍCIO</span>
+            </a>
+          <span class="tooltip">INÍCIO</span>
+        </form> 
       </li>
       <li>
         <form action="/ch_cumprida" method="POST" id="form-ch">

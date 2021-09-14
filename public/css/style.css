@@ -17,7 +17,7 @@ body{
     left: 0;
     height: 100%;
     width:  78px;
-    background: #11101d;
+    background: #00689b;
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -110,7 +110,7 @@ body{
     top: 50%;
 }
 .sidebar ul li a:hover{
-    color: #11101d;
+    color: #00689b;
     background: #fff;
 }
 .sidebar ul li input{
@@ -122,21 +122,25 @@ body{
     border-radius: 12px;
     border: none;
     outline: none;
-    background: #1b1b31;
+    background: #65a6c4;
     padding-left: 50px;
     font-size: 18px;
     color: #fff;
 }
-.sidebar ul li .bx-search{
-    position: absolute;
+.sidebar ul li .bx-home{
     z-index:  99;
+    background-color: #b3d3e2;
     color: #fff;
     font-size: 22px;
     transition: all 0.5s ease;
 }
-.sidebar ul li .bx-search:hover{
+.sidebar.active .bx-home{
     background: #fff;
-    color: #1b1b31;
+    color: #65a6c4;
+}
+.sidebar.active #form-home .links_name{
+    position: relative;
+    left: 40px;
 }
 .sidebar ul li a{
     color: #fff;
@@ -172,7 +176,7 @@ body{
 .home_content .text{
     font-size: 25px;
     font-weight: 500;
-    color: #1b1b31;
+    color: #65a6c4;
     margin: 12px;
 }
 .sidebar.active ~ .home_content{

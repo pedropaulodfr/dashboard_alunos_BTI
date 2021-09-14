@@ -35,6 +35,8 @@ google.charts.load("current", {packages:["corechart"]});
     var options = {
         title: 'Integralizações',
         pieHole: 0.4,
+        colors:['#00689b','#b3d3e2'],
+        backgroundColor: "transparent",
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
