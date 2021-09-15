@@ -176,7 +176,7 @@ body{
 .home_content .text{
     font-size: 25px;
     font-weight: 500;
-    color: #65a6c4;
+    color: #ffffff;
     margin: 12px;
 }
 .sidebar.active ~ .home_content{

@@ -35,7 +35,7 @@ google.charts.load("current", {packages:["corechart"]});
     var options = {
         title: 'Integralizações',
         pieHole: 0.4,
-        colors:['#00689b','#b3d3e2'],
+        colors:['#80b3ce','#66a5c4', '00689b'],
         backgroundColor: "transparent",
     };
 

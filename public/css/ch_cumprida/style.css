@@ -3,5 +3,13 @@
 }
 .home_content{
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    background: linear-gradient(to right, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.graficos{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #f6f6f6;
+    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.3);
+    border-radius: 30px;
 }
