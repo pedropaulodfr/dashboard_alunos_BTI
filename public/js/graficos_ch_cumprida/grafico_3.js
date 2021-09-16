@@ -17,8 +17,8 @@ google.charts.setOnLoadCallback( drawChart );
 
 function drawChart(){
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Ano');
-    data.addColumn('number', 'Despesas');
+    data.addColumn('string', 'Período');
+    data.addColumn('number', 'Soma das integralizações');
     
     data.addRows(
         dadosGraficoSomaCH       
@@ -29,6 +29,7 @@ function drawChart(){
         legend: { position: 'bottom' },
         colors:['#00689b','#b3d3e2'],
         backgroundColor: "transparent",
+        annotations: {style: 'point'}
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
