@@ -23,19 +23,19 @@ for(let i = 0; i < dadosIntegralizacoes.length; i++){
 }
 
 google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Cumpridas', 'Nulas'],
-            ["CUMPRIDAS", cumprida],
-            ["NULAS", nula],
-            ["PROGRESSO", integralizando]
-        ]);
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Cumpridas', 'Nulas'],
+        ["CUMPRIDAS", cumprida],
+        ["NULAS", nula],
+        ["PROGRESSO", integralizando]
+    ]);
 
     var options = {
         title: 'Integralizações',
         pieHole: 0.4,
-        colors:['#80b3ce','#66a5c4', '00689b'],
+        slices: [{color: '80b3ce', offset: 0.1}, {color: '#68a5c4'}, {color: '#00689b'}, {color: '#b3d3e2'}],
         backgroundColor: "transparent",
     };
 

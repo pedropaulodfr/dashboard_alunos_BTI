@@ -1,5 +1,6 @@
 .flex-container{
     display: flex;
+    flex-wrap: wrap;
 }
 .home_content{
     overflow-x: auto;

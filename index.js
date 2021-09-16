@@ -38,7 +38,7 @@ app.post("/ch_cumprida", (req, res) =>{
     let matriculas = "SELECT COUNT(*) AS QUANTIDADE, `Status` FROM alunos_ch_cumprida GROUP BY `Status`"
     let integralizacoes = " SELECT COUNT(*) AS CONTAGEM, Perc_Total FROM alunos_ch_cumprida WHERE Perc_Total >= 100 OR Perc_Total = 0 OR (Perc_Total < 100 AND Perc_Total > 0) GROUP BY `Nome`;"
     let somaCH = "SELECT SUM(CH_Integralizada) AS SOMA, `Ingresso` AS INGRESSO FROM alunos_ch_cumprida GROUP BY `Ingresso`"
-
+    
     con.query(matriculas, (err, queryMatriculas, fields) =>{
         con.query(integralizacoes, (err, queryIntegralizacoes, fields) =>{
             con.query(somaCH, (err, querySomaCH, fields) =>{
