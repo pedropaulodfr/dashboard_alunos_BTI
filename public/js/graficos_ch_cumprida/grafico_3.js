@@ -29,7 +29,8 @@ function drawChart(){
         legend: { position: 'bottom' },
         colors:['#00689b','#b3d3e2'],
         backgroundColor: "transparent",
-        annotations: {style: 'point'}
+        pointSize: 7,
+        pointShape: { type: 'point', rotation: 180}
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));

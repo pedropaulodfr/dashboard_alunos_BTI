@@ -22,9 +22,9 @@ function drawChart() {
     var options = {
         title: 'Matrículas',
         pieHole: 0.4,
-        //colors:['#00689b','#b3d3e2'],
         slices: [{color: '#00689b'}, {color: '#b3d3e2'}],
         backgroundColor: "transparent",
+        pieSliceText: 'percentage' 
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));

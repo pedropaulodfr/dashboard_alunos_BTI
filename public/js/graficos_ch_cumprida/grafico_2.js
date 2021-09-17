@@ -35,10 +35,11 @@ function drawChart() {
     var options = {
         title: 'Integralizações',
         pieHole: 0.4,
-        slices: [{color: '80b3ce', offset: 0.1}, {color: '#68a5c4'}, {color: '#00689b'}, {color: '#b3d3e2'}],
+        slices: [{color: '80b3ce', offset: 0.1}, {color: '#2697cf'}, {color: '#007ab5'}, {color: '#b3d3e2'}],
         backgroundColor: "transparent",
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
     chart.draw(data, options);
 }
+
