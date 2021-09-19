@@ -54,7 +54,29 @@ app.post("/ch_cumprida", (req, res) =>{
 })
 
 app.post("/ier", (req, res) =>{
-    res.render("ier")
+    let ingressos = "SELECT `Ano-Periodo` AS PERIODO, INGRESSANTES FROM integralizações_de_programa"
+    let ativos = "SELECT `Ano-Periodo` AS PERIODO, ATIVOS FROM integralizações_de_programa"
+    let integralizacoes = "SELECT `Ano-Periodo` AS PERIODO , TOTAL AS INTEGRALIZACOES FROM integralizações_de_programa"
+    let trancamentos = "SELECT `Ano-Periodo` AS PERIODO , TOTAL AS TRANCAMENTOS FROM trancamentos_de_programa"
+    let cancelamentos = "SELECT `Ano-Periodo` AS PERIODO , TOTAL AS CANCELAMENTOS FROM cancelamentos_de_programa"
+
+    con.query(ingressos, (err, queryIngressos, fields)=>{
+        con.query(ativos, (err, queryAtivos, fields)=>{
+            con.query(integralizacoes, (err, queryIntegralizacoes, fields)=>{
+                con.query(trancamentos, (err, queryTrancamentos, fields)=>{
+                    con.query(cancelamentos, (err, queryCancelamentos, fields)=>{
+                        res.render("ier", {
+                            dadosIngressos: JSON.stringify(queryIngressos),
+                            dadosAtivos: JSON.stringify(queryAtivos),
+                            dadosIntegralizacoes: JSON.stringify(queryIntegralizacoes),
+                            dadosTrancamentos: JSON.stringify(queryTrancamentos),
+                            dadosCancelamentos: JSON.stringify(queryCancelamentos)
+                        })
+                    })
+                })
+            })
+        })
+    })
 })
 
 app.post("/insucessos", (req, res) =>{

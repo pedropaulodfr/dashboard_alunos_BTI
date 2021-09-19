@@ -1,37 +1,29 @@
 {{>index}}
+<section id="dadosIngressos" style="display: none;">{{dadosIngressos}}</section>
+<section id="dadosAtivos" style="display: none;">{{dadosAtivos}}</section>
+<section id="dadosIntegralizacoes" style="display: none;">{{dadosIntegralizacoes}}</section>
+<section id="dadosTrancamentos" style="display: none;">{{dadosTrancamentos}}</section>
+<section id="dadosCancelamentos" style="display: none;">{{dadosCancelamentos}}</section>
 
-<style>
-    #graficos-pontos{
-        margin-left: 30px;
-    }
-</style>
+<link rel="stylesheet" href="css/graficos/style.css">
+<script src="js/graficos_ier/grafico_1.js"></script>
+<script src="js/graficos_ier/grafico_2.js"></script>
+<script src="js/graficos_ier/grafico_3.js"></script>
+<script src="js/graficos_ier/grafico_4.js"></script>
+<script src="js/graficos_ier/grafico_5.js"></script>
 
 <div class="home_content">
   <div class="content">
-    <div class="text"><h1>Relatório de insucessos</h1></div>
+    <div class="text"><h3>Ingressos, egressos e retenções</h3></div>
     <br>
     <div class="text">
-      <h2>Descrição</h2>
-      <h4>Relatório que mostra a quantidade de trancamentos, cancelamentos e integralizações de alunos de um determinado período e em qual período essas ações ocorreram.</h4><br>
-      <h2>Gráficos a serem extraídos</h2>
-      <ul id="graficos-pontos">
-          <li>
-            Quantos alunos ingressaram em cada período;
-          </li>
-          <li>
-            Quantidade de alunos ativos em cada período;
-          </li>
-          <li>
-            Períodos em que houveram mais trancamentos, cancelamentos e integralizações;
-          </li>
-          <li>
-            A quais períodos pertencem os maiores índices de trancamentos, cancelamentos e integralizações;
-          </li>
-          <li>
-            Média de trancamentos, cancelamentos e integralizações por período.
-          </li>
-
-      </ul>
+      <section class="flex-container">
+        <div id="curve_chart_1" class="graficos" style="width: 678px; height: 300px"></div>
+        <div id="curve_chart_2" class="graficos" style="width: 678px; height: 300px"></div>
+        <div id="curve_chart_3" class="graficos" style="width: 678px; height: 300px"></div>
+        <div id="curve_chart_4" class="graficos" style="width: 678px; height: 300px"></div>
+        <div id="curve_chart_5" class="graficos" style="width: 678px; height: 300px"></div>
+      </section>
     </div>
   </div>
 </div>
