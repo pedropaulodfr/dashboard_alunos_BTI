@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 app.use(express.static('public'))
 
 // Conexão com o Banco de Dados MySQL
-const mysql = require("mysql")
+const mysql = require("mysql");
+const { query } = require("express");
 const con = mysql.createConnection({
     host: 'localhost', // O host do banco. Ex: localhost
     user: 'root', // Um usuário do banco. Ex: user 
@@ -80,7 +81,37 @@ app.post("/ier", (req, res) =>{
 })
 
 app.post("/insucessos", (req, res) =>{
-    res.render("insucessos")
+    let discentes = "SELECT COUNT(*), Nome, Codigo, Discentes FROM relatorio_de_insucessos GROUP BY Codigo ORDER BY Discentes DESC LIMIT 10"
+    let repRelatMedia = "SELECT COUNT(*), Nome, Codigo, Media FROM relatorio_de_insucessos WHERE Media >= ((Discentes*30)/100) GROUP BY Codigo ORDER BY Media DESC LIMIT 10"
+    let repAbsMedia = "SELECT COUNT(*), Nome, Codigo, Media FROM relatorio_de_insucessos GROUP BY Codigo ORDER BY Media DESC LIMIT 10"
+    let repFalta = "SELECT COUNT(*), Nome, Codigo, Falta FROM relatorio_de_insucessos WHERE Falta > 0 GROUP BY Codigo ORDER BY Falta DESC LIMIT 10"
+    let repMediaFalta = "SELECT COUNT(*), Nome, Codigo, `Media e Falta` AS MediaFalta FROM relatorio_de_insucessos WHERE `Media e Falta` > 0 GROUP BY Codigo ORDER BY `Media e Falta` DESC LIMIT 10"
+    let cancelamentos = "SELECT COUNT(*), Nome, Codigo, Cancelamentos FROM relatorio_de_insucessos WHERE Cancelamentos > 0 GROUP BY Codigo ORDER BY Cancelamentos DESC LIMIT 10"
+    let insucessos = "SELECT COUNT(*), Nome, Codigo, `Total Insucesso` AS Insucessos FROM relatorio_de_insucessos WHERE `Total Insucesso` > 0 GROUP BY Codigo ORDER BY `Total Insucesso` DESC LIMIT 10"
+
+    con.query(discentes, (err, queryDiscentes, fields)=>{
+        con.query(repRelatMedia, (err, queryRepRelatMedia, fields)=>{
+            con.query(repAbsMedia, (err, queryRepAbsMedia, fields)=>{
+                con.query(repFalta, (err, queryRepFalta, fields)=>{
+                    con.query(repMediaFalta, (err, queryRepMediaFalta, fields)=>{
+                        con.query(cancelamentos, (err, queryCancelamentos, fields)=>{
+                            con.query(insucessos, (err, queryInsucessos, fields)=>{
+                                res.render("insucessos", {
+                                    dadosDiscentes: JSON.stringify(queryDiscentes),
+                                    dadosRepRelatMedia: JSON.stringify(queryRepRelatMedia),
+                                    dadosRepAbsMedia: JSON.stringify(queryRepAbsMedia),
+                                    dadosRepFalta: JSON.stringify(queryRepFalta),
+                                    dadosRepMediaFalta : JSON.stringify(queryRepMediaFalta),
+                                    dadosCancelamentos : JSON.stringify(queryCancelamentos),
+                                    dadosInsucessos : JSON.stringify(queryInsucessos),
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    })
 })
 
 app.listen("8080", ()=>{

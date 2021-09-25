@@ -1,42 +1,36 @@
 {{>index}}
+<section id="dadosDiscentes" style="display: none;">{{dadosDiscentes}}</section>
+<section id="dadosRepRelatMedia" style="display: none;">{{dadosRepRelatMedia}}</section>
+<section id="dadosRepAbsMedia" style="display: none;">{{dadosRepAbsMedia}}</section>
+<section id="dadosRepFalta" style="display: none;">{{dadosRepFalta}}</section>
+<section id="dadosRepMediaFalta" style="display: none;">{{dadosRepMediaFalta}}</section>
+<section id="dadosCancelamentos" style="display: none;">{{dadosCancelamentos}}</section>
+<section id="dadosInsucessos" style="display: none;">{{dadosInsucessos}}</section>
 
-<style>
-    #graficos-pontos{
-        margin-left: 30px;
-    }
-</style>
+
+<link rel="stylesheet" href="css/graficos/style.css">
+<script src="js/graficos_insucessos/grafico_1.js"></script>
+<script src="js/graficos_insucessos/grafico_2.js"></script>
+<script src="js/graficos_insucessos/grafico_3.js"></script>
+<script src="js/graficos_insucessos/grafico_4.js"></script>
+<script src="js/graficos_insucessos/grafico_5.js"></script>
+<script src="js/graficos_insucessos/grafico_6.js"></script>
+<script src="js/graficos_insucessos/grafico_7.js"></script>
 
 <div class="home_content">
   <div class="content">
-    <div class="text"><h1>Relatório de ingressos, retenções e egressos</h1></div>
+    <div id="titulo" class="text"><h3>Insucessos de alunos</h3></div>
     <br>
     <div class="text">
-      <h2>Descrição</h2>
-      <h4>Relatório que mostra a quantidade de turmas, discentes, cancelamentos, trancamentos e reprovações que os alunos tiveram em uma determinada disciplina.</h4><br>
-      <h2>Gráficos a serem extraídos</h2>
-      <ul id="graficos-pontos">
-          <li>
-            Quantidade de alunos x média;
-          </li>
-          <li>
-            Quantidade de alunos x falta;
-          </li>
-          <li>
-            Quantidade de alunos x média e falta;
-          </li>
-          <li>
-            Quantidade de alunos x cancelamento;
-          </li>
-          <li>
-            Turmas com mais reprovações;
-          </li>
-          <li>
-            Turmas com mais cancelamentos;
-          </li>
-          <li>
-            Turmas com mais reprovações;
-          </li>
-      </ul>
+      <section class="flex-container">
+        <div id="top_x_div_1" class="graficos" style="width: 1220px; height: 300px"></div>
+        <div id="top_x_div_2" class="graficos" style="width: 1220px; height: 300px;"></div>
+        <div id="top_x_div_3" class="graficos" style="width: 1220px; height: 300px"></div>
+        <div id="top_x_div_4" class="graficos" style="width: 1220px; height: 300px"></div>
+        <div id="top_x_div_5" class="graficos" style="width: 1220px; height: 300px"></div>
+        <div id="top_x_div_6" class="graficos" style="width: 1220px; height: 300px"></div>
+        <div id="top_x_div_7" class="graficos" style="width: 1220px; height: 300px"></div>
+      </section>
     </div>
   </div>
 </div>
