@@ -88,6 +88,7 @@ app.post("/insucessos", (req, res) =>{
     let repMediaFalta = "SELECT COUNT(*), Nome, Codigo, `Media e Falta` AS MediaFalta FROM relatorio_de_insucessos WHERE `Media e Falta` > 0 GROUP BY Codigo ORDER BY `Media e Falta` DESC LIMIT 10"
     let cancelamentos = "SELECT COUNT(*), Nome, Codigo, Cancelamentos FROM relatorio_de_insucessos WHERE Cancelamentos > 0 GROUP BY Codigo ORDER BY Cancelamentos DESC LIMIT 10"
     let insucessos = "SELECT COUNT(*), Nome, Codigo, `Total Insucesso` AS Insucessos FROM relatorio_de_insucessos WHERE `Total Insucesso` > 0 GROUP BY Codigo ORDER BY `Total Insucesso` DESC LIMIT 10"
+    let disciplinas = "SELECT COUNT(*) AS Turmas, Nome, Codigo FROM relatorio_de_insucessos GROUP BY Nome"
 
     con.query(discentes, (err, queryDiscentes, fields)=>{
         con.query(repRelatMedia, (err, queryRepRelatMedia, fields)=>{
@@ -96,14 +97,17 @@ app.post("/insucessos", (req, res) =>{
                     con.query(repMediaFalta, (err, queryRepMediaFalta, fields)=>{
                         con.query(cancelamentos, (err, queryCancelamentos, fields)=>{
                             con.query(insucessos, (err, queryInsucessos, fields)=>{
-                                res.render("insucessos", {
-                                    dadosDiscentes: JSON.stringify(queryDiscentes),
-                                    dadosRepRelatMedia: JSON.stringify(queryRepRelatMedia),
-                                    dadosRepAbsMedia: JSON.stringify(queryRepAbsMedia),
-                                    dadosRepFalta: JSON.stringify(queryRepFalta),
-                                    dadosRepMediaFalta : JSON.stringify(queryRepMediaFalta),
-                                    dadosCancelamentos : JSON.stringify(queryCancelamentos),
-                                    dadosInsucessos : JSON.stringify(queryInsucessos),
+                                con.query(disciplinas, (err, queryDisciplinas, fields)=>{
+                                    res.render("insucessos", {
+                                        dadosDiscentes: JSON.stringify(queryDiscentes),
+                                        dadosRepRelatMedia: JSON.stringify(queryRepRelatMedia),
+                                        dadosRepAbsMedia: JSON.stringify(queryRepAbsMedia),
+                                        dadosRepFalta: JSON.stringify(queryRepFalta),
+                                        dadosRepMediaFalta: JSON.stringify(queryRepMediaFalta),
+                                        dadosCancelamentos: JSON.stringify(queryCancelamentos),
+                                        dadosInsucessos: JSON.stringify(queryInsucessos),
+                                        dadosDisciplinas: JSON.stringify(queryDisciplinas),
+                                    })
                                 })
                             })
                         })
