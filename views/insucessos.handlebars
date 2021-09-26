@@ -21,9 +21,9 @@
   <div class="content">
     <div id="titulo" class="text"><h3>Insucessos de alunos</h3></div>
     <br>
-    <div class="text">
+    <div id="area-charts" class="text">
       {{>consultar_turmas}}
-      <section class="flex-container">
+      <section id="general-info" class="flex-container">
         <div id="top_x_div_1" class="graficos" style="width: 1220px; height: 300px"></div>
         <div id="top_x_div_2" class="graficos" style="width: 1220px; height: 300px;"></div>
         <div id="top_x_div_3" class="graficos" style="width: 1220px; height: 300px"></div>
@@ -35,3 +35,8 @@
     </div>
   </div>
 </div>
+
+<form action="/consultar-disciplina" method="POST">
+  <input id="nome-disciplina" type="text" name="nome_disciplina" style="display: none;">
+  <button id="submit-disciplina" type="submit" style="display: none;"></button>
+</form>

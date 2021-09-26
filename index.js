@@ -118,6 +118,20 @@ app.post("/insucessos", (req, res) =>{
     })
 })
 
+app.post("/consultar-disciplina", (req, res)=>{
+    let relatDisciplina = "SELECT Codigo, Nome, Turmas, Discentes, Cancelamentos, Media, Falta, `Media e Falta` AS MediaFalta, `Total Insucesso` AS Insucesso FROM relatorio_de_insucessos WHERE Nome = ?"
+
+    let nomeDisciplina = req.body.nome_disciplina;
+
+    con.query(relatDisciplina, [nomeDisciplina], (err, queryRelatDisciplina, fields)=>{
+        console.log(queryRelatDisciplina);
+        res.render("consultar_disciplina", {
+            dadosRelatDisciplina: JSON.stringify(queryRelatDisciplina),
+        });
+    })
+
+})
+
 app.listen("8080", ()=>{
     console.log("Servidor rodando na url http://localhost:8080");
 })
