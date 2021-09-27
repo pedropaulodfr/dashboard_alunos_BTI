@@ -124,7 +124,6 @@ app.post("/consultar-disciplina", (req, res)=>{
     let nomeDisciplina = req.body.nome_disciplina;
 
     con.query(relatDisciplina, [nomeDisciplina], (err, queryRelatDisciplina, fields)=>{
-        console.log(queryRelatDisciplina);
         res.render("consultar_disciplina", {
             dadosRelatDisciplina: JSON.stringify(queryRelatDisciplina),
         });

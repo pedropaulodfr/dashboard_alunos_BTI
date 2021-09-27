@@ -2,8 +2,6 @@ let dadosRelatDisciplina = document.getElementById("dadosRelatDisciplina").inner
 
 dadosRelatDisciplina = JSON.parse(dadosRelatDisciplina);
 
-console.log(dadosRelatDisciplina);
-
 let somaTurmas = 0;
 let somaDiscentes = 0;
 let somaCancelamentos = 0;
@@ -11,6 +9,8 @@ let somaMedia = 0;
 let somaFalta = 0;
 let somaMediaFalta = 0;
 let somaInsucesso = 0;
+
+console.log(dadosRelatDisciplina);
 
 for (let i = 0; i < dadosRelatDisciplina.length; i++) {
     let turmas = dadosRelatDisciplina[i].Turmas;
@@ -28,18 +28,15 @@ for (let i = 0; i < dadosRelatDisciplina.length; i++) {
     somaFalta = somaFalta + falta;
     somaMediaFalta = somaMediaFalta + mediaFalta;
     somaInsucesso = somaInsucesso + insucesso;
-
 }
 
-let dadosGraficoRelatDisciplina = [['Element', 'Quantidade de alunos']];
+let dadosGraficoRelatDisciplina = [['Element', 'Quantidade de alunos', { role: 'style' }]];
 dadosGraficoRelatDisciplina.push(
-    ['Media', somaTurmas], 
-    ['Falta', somaFalta],
-    ['Media e Falta', somaDiscentes],
-    ['Cancelamentos', somaCancelamentos]
+    ['Media', somaTurmas, '#003366'], 
+    ['Falta', somaFalta, '#336699'],
+    ['Media e Falta', somaMediaFalta, '#003399'],
+    ['Cancelamentos', somaCancelamentos, '#000099']
 );
-
-console.log(dadosGraficoRelatDisciplina);
 
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);

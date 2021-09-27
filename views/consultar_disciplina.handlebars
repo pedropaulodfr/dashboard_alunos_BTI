@@ -2,22 +2,46 @@
 <section id="dadosRelatDisciplina" style="display: none;">{{dadosRelatDisciplina}}</section>
 
 <link rel="stylesheet" href="css/graficos/style.css">
+<link rel="stylesheet" href="css/consultar_turmas.css">
 <script src="js/graficos_consulta_disciplina/grafico_1.js"></script>
+<script src="js/graficos_consulta_disciplina/tabela_1.js"></script>
+<script src="js/graficos_consulta_disciplina/tabela_2.js"></script>
 
 <div class="home_content">
   <div class="content">
     <div id="titulo" class="text"><h3>Insucessos de alunos</h3></div>
     <br>
+        <section class="flex-container" >
+            <div id="tabela_1" class="graficos" style="height: 300px; width: 600px">
+                <table id="tabelaFrquenciaMateriais">
+                    <caption id="table-title" style="font-size: 17px"></caption>
+                    <thead>
+                        <th scope="col">Códigos</th>
+                        <th scope="col">Discentes</th>
+                        <th scope="col">Insucessos</th>
+                    </thead>
+                    <tbody id="corpo_tabela_1">
+                    </tbody>
+                </table>
+            </div>  
+            <div id="tabela_2" class="graficos" style="height: 300px; width: 600px">
+                <table id="tabelaFrquenciaMateriais">
+                    <caption style="font-size: 17px"><b>DADOS TOTAIS</b></caption>
+                    <thead>
+                        <th scope="col">Turmas</th>
+                        <th scope="col">Discentes</th>
+                        <th scope="col">Total de Insucessos</th>
+                    </thead>
+                    <tbody id="corpo_tabela_2">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
     <div id="area-charts" class="text">
-      <section id="general-info" class="flex-container">
-        <div id="barchart_values_1" class="graficos" style="width: 1220px; height: 300px"></div>
-        <div id="top_x_div_2" class="graficos" style="width: 1220px; height: 300px;"></div>
-        <div id="top_x_div_3" class="graficos" style="width: 1220px; height: 300px"></div>
-        <div id="top_x_div_4" class="graficos" style="width: 1220px; height: 300px"></div>
-        <div id="top_x_div_5" class="graficos" style="width: 1220px; height: 300px"></div>
-        <div id="top_x_div_6" class="graficos" style="width: 1220px; height: 300px"></div>
-        <div id="top_x_div_7" class="graficos" style="width: 1220px; height: 300px"></div>
-      </section>
+        <section id="general-info" class="flex-container">
+            <div id="barchart_values_1" class="graficos" style="width: 1220px; height: 300px;"></div>
+        </section>
     </div>
   </div>
 </div>

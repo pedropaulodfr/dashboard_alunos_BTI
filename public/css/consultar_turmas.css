@@ -23,3 +23,24 @@
     align-items: center;
     cursor: pointer;
 }
+#tabela_1{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+#tabela_2{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+table {
+    border-radius: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    width: 90%;
+}
+th{
+    padding: 15px;
+}
+
+td {
+    padding: 7px;
+    padding-left: 90px;
+}
