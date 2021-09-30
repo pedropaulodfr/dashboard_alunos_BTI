@@ -32,7 +32,7 @@ for (let i = 0; i < dadosRelatDisciplina.length; i++) {
 
 let dadosGraficoRelatDisciplina = [['Element', 'Quantidade de alunos', { role: 'style' }]];
 dadosGraficoRelatDisciplina.push(
-    ['Media', somaTurmas, '#003366'], 
+    ['Media', somaMedia, '#003366'], 
     ['Falta', somaFalta, '#336699'],
     ['Media e Falta', somaMediaFalta, '#003399'],
     ['Cancelamentos', somaCancelamentos, '#000099']

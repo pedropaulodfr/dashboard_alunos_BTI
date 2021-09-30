@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Jost");
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Proppins", sans-serif;
+    font-family: "Jost", sans-serif;
 }
 body{
     position: relative;
@@ -21,9 +21,11 @@ body{
     background: #00689b;
     padding: 6px 14px;
     transition: all 0.5s ease;
+    box-shadow:  0 0 1em #125170;
 }
 .sidebar.active{
     width: 240px;
+    box-shadow:  0 0 1em #125170;
 }
 .sidebar.sidebar.active .logo .logo_name{
     opacity: 1;
@@ -79,7 +81,6 @@ body{
 }
 .sidebar ul{
     margin-top: 20px;
-
 }
 .sidebar ul li{
     position: relative;
