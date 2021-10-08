@@ -1,7 +1,3 @@
-var dadosSomaCH = document.getElementById("dadosSomaCH").innerHTML;
-
-dadosSomaCH = JSON.parse(dadosSomaCH);
-
 var dadosGraficoSomaCH = [];
 for(let i = 0; i < dadosSomaCH.length; i++){
     let ingresso = dadosSomaCH[i].INGRESSO;

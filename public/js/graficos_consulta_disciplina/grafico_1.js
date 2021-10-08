@@ -1,7 +1,3 @@
-let dadosRelatDisciplina = document.getElementById("dadosRelatDisciplina").innerHTML;
-
-dadosRelatDisciplina = JSON.parse(dadosRelatDisciplina);
-
 let somaTurmas = 0;
 let somaDiscentes = 0;
 let somaCancelamentos = 0;

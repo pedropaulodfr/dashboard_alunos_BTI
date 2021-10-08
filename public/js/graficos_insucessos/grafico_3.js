@@ -1,7 +1,3 @@
-var dadosRepAbsMedia = document.getElementById("dadosRepAbsMedia").innerHTML;
-
-dadosRepAbsMedia = JSON.parse(dadosRepAbsMedia);
-
 var dadosGraficoRepAbsMedia = [['Disciplinas', 'Media']];
 for(let i = 0; i < dadosRepAbsMedia.length; i++){
     let nome = dadosRepAbsMedia[i].Nome;

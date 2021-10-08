@@ -1,7 +1,3 @@
-var dadosTrancamentos = document.getElementById("dadosTrancamentos").innerHTML;
-
-dadosTrancamentos = JSON.parse(dadosTrancamentos);
-
 var dadosGraficoTrancamentos = [];
 for(let i = 0; i < dadosTrancamentos.length; i++){
     let periodo = dadosTrancamentos[i].PERIODO;

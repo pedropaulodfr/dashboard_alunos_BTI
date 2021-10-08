@@ -1,7 +1,3 @@
-var dadosDiscentes = document.getElementById("dadosDiscentes").innerHTML;
-
-dadosDiscentes = JSON.parse(dadosDiscentes);
-
 var dadosGraficoDiscentes = [['Disciplinas', 'Discentes']];
 for(let i = 0; i < dadosDiscentes.length; i++){
     let nome = dadosDiscentes[i].Nome;

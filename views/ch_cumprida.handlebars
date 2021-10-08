@@ -1,7 +1,10 @@
 {{>index}}
-<section id="dadosMatriculas" style="display: none;">{{dadosMatriculas}}</section>
-<section id="dadosIntegralizacoes" style="display: none;">{{dadosIntegralizacoes}}</section>
-<section id="dadosSomaCH" style="display: none;">{{dadosSomaCH}}</section>
+
+<script>
+  var dadosMatriculas = {{{dadosMatriculas}}};
+  var dadosIntegralizacoes = {{{dadosIntegralizacoes}}};
+  var dadosSomaCH = {{{dadosSomaCH}}};
+</script>
 
 <link rel="stylesheet" href="css/graficos/style.css">
 <script src="js/graficos_ch_cumprida/grafico_1.js"></script>

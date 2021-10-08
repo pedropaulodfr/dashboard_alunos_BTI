@@ -1,7 +1,3 @@
-var dadosRepFalta = document.getElementById("dadosRepFalta").innerHTML;
-
-dadosRepFalta = JSON.parse(dadosRepFalta);
-
 var dadosGraficoRepFalta = [['Disciplinas', 'Falta']];
 for(let i = 0; i < dadosRepFalta.length; i++){
     let nome = dadosRepFalta[i].Nome;

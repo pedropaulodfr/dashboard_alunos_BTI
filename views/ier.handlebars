@@ -1,9 +1,12 @@
 {{>index}}
-<section id="dadosIngressos" style="display: none;">{{dadosIngressos}}</section>
-<section id="dadosAtivos" style="display: none;">{{dadosAtivos}}</section>
-<section id="dadosIntegralizacoes" style="display: none;">{{dadosIntegralizacoes}}</section>
-<section id="dadosTrancamentos" style="display: none;">{{dadosTrancamentos}}</section>
-<section id="dadosCancelamentos" style="display: none;">{{dadosCancelamentos}}</section>
+
+<script>
+  var dadosIngressos = {{{dadosIngressos}}};
+  var dadosAtivos = {{{dadosAtivos}}};
+  var dadosIntegralizacoes = {{{dadosIntegralizacoes}}};
+  var dadosTrancamentos = {{{dadosTrancamentos}}};
+  var dadosCancelamentos = {{{dadosCancelamentos}}};
+</script>
 
 <link rel="stylesheet" href="css/graficos/style.css">
 <script src="js/graficos_ier/grafico_1.js"></script>

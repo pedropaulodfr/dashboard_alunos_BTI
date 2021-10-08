@@ -1,8 +1,3 @@
-var dadosIntegralizacoes = document.getElementById("dadosIntegralizacoes").innerHTML;
-
-dadosIntegralizacoes = JSON.parse(dadosIntegralizacoes);
-
-
 let cumprida = 0;
 let nula = 0;
 let integralizando = 0;

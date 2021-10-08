@@ -1,7 +1,3 @@
-var dadosAtivos = document.getElementById("dadosAtivos").innerHTML;
-
-dadosAtivos = JSON.parse(dadosAtivos);
-
 var dadosGraficoAtivos = [];
 for(let i = 0; i < dadosAtivos.length; i++){
     let periodo = dadosAtivos[i].PERIODO;

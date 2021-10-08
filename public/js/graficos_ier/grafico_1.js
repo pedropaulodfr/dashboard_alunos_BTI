@@ -1,7 +1,3 @@
-var dadosIngressos = document.getElementById("dadosIngressos").innerHTML;
-
-dadosIngressos = JSON.parse(dadosIngressos);
-
 var dadosGraficoIngressos = [];
 for(let i = 0; i < dadosIngressos.length; i++){
     let periodo = dadosIngressos[i].PERIODO;

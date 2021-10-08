@@ -1,8 +1,4 @@
 function PegarNomeDisciplinas(params) {
-    let dadosDisciplinas = document.getElementById("dadosDisciplinas").innerHTML;
-
-    dadosDisciplinas = JSON.parse(dadosDisciplinas);
-
     let dadosSelectDisciplinas = [];
     for(let i = 0; i < dadosDisciplinas.length; i++){
         let nome = dadosDisciplinas[i].Nome;

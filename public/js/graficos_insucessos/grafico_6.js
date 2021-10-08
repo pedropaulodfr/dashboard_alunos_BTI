@@ -1,7 +1,3 @@
-var dadosCancelamentos = document.getElementById("dadosCancelamentos").innerHTML;
-
-dadosCancelamentos = JSON.parse(dadosCancelamentos);
-
 var dadosGraficoCancelamentos = [['Disciplinas', 'Cancelamentos']];
 for(let i = 0; i < dadosCancelamentos.length; i++){
     let nome = dadosCancelamentos[i].Nome;

@@ -1,7 +1,3 @@
-var dadosMatriculas = document.getElementById("dadosMatriculas").innerHTML;
-
-dadosMatriculas = JSON.parse(dadosMatriculas);
-
 var dadosGraficoMatricula = [['Ativas', 'Trancadas']];
 for(let i = 0; i < dadosMatriculas.length; i++){
     let status = dadosMatriculas[i].Status;

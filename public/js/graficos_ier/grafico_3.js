@@ -1,7 +1,3 @@
-var dadosIntegralizacoes = document.getElementById("dadosIntegralizacoes").innerHTML;
-
-dadosIntegralizacoes = JSON.parse(dadosIntegralizacoes);
-
 var dadosGraficoIntegralizacoes = [];
 for(let i = 0; i < dadosIntegralizacoes.length; i++){
     let periodo = dadosIntegralizacoes[i].PERIODO;

@@ -1,12 +1,14 @@
 {{>index}}
-<section id="dadosDiscentes" style="display: none;">{{dadosDiscentes}}</section>
-<section id="dadosRepRelatMedia" style="display: none;">{{dadosRepRelatMedia}}</section>
-<section id="dadosRepAbsMedia" style="display: none;">{{dadosRepAbsMedia}}</section>
-<section id="dadosRepFalta" style="display: none;">{{dadosRepFalta}}</section>
-<section id="dadosRepMediaFalta" style="display: none;">{{dadosRepMediaFalta}}</section>
-<section id="dadosCancelamentos" style="display: none;">{{dadosCancelamentos}}</section>
-<section id="dadosInsucessos" style="display: none;">{{dadosInsucessos}}</section>
 
+<script>
+  var dadosDiscentes = {{{dadosDiscentes}}};
+  var dadosRepRelatMedia = {{{dadosRepRelatMedia}}};
+  var dadosRepAbsMedia = {{{dadosRepAbsMedia}}};
+  var dadosRepFalta = {{{dadosRepFalta}}};
+  var dadosRepMediaFalta = {{{dadosRepMediaFalta}}};
+  var dadosCancelamentos = {{{dadosCancelamentos}}};
+  var dadosInsucessos = {{{dadosInsucessos}}};
+</script>
 
 <link rel="stylesheet" href="css/graficos/style.css">
 <script src="js/graficos_insucessos/grafico_1.js"></script>

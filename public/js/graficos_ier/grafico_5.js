@@ -1,7 +1,3 @@
-var dadosCancelamentos = document.getElementById("dadosCancelamentos").innerHTML;
-
-dadosCancelamentos = JSON.parse(dadosCancelamentos);
-
 var dadosGraficoCancelamentos = [];
 for(let i = 0; i < dadosCancelamentos.length; i++){
     let periodo = dadosCancelamentos[i].PERIODO;
