@@ -5,7 +5,6 @@ function ConstrutorTabela_1(){
         let codigos = dadosRelatDisciplina[i].Codigo;
         let discentes = dadosRelatDisciplina[i].Discentes;
         let insucessos = dadosRelatDisciplina[i].Insucesso;
-        console.log(codigos);
 
         // Cria elementos e o corpo da tabela
         linha = document.createElement("tr");

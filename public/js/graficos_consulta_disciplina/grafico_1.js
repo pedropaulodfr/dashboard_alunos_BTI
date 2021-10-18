@@ -6,8 +6,6 @@ let somaFalta = 0;
 let somaMediaFalta = 0;
 let somaInsucesso = 0;
 
-console.log(dadosRelatDisciplina);
-
 for (let i = 0; i < dadosRelatDisciplina.length; i++) {
     let turmas = dadosRelatDisciplina[i].Turmas;
     let discentes = dadosRelatDisciplina[i].Discentes;
