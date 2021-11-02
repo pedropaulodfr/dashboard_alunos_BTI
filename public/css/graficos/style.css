@@ -14,3 +14,11 @@
     box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.3);
     border-radius: 30px;
 }
+.grafico_deslocado{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: -100px;
+    background-color: #f6f6f6;
+    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.3);
+    border-radius: 30px;
+}

@@ -1,15 +1,37 @@
 {{>index}}
 
+<script>
+  var dadosInsucessos = {{{dadosInsucessos}}};
+  var dadosTrancamentos = {{{dadosTrancamentos}}};
+  var dadosCancelamentos = {{{dadosCancelamentos}}};
+  var dadosIntegralizacoes = {{{dadosIntegralizacoes}}};
+  var dadosDiscentes = {{{dadosDiscentes}}};
+  var dadosDisciplinas = {{{dadosDisciplinas}}};
+</script>
+
+<link rel="stylesheet" href="css/graficos/style.css">
+
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<script src="js/graficos_home/grafico_1.js"></script>
+<script src="js/graficos_home/grafico_2.js"></script>
+<script src="js/graficos_home/grafico_3.js"></script>
+
 <div class="home_content">
   <div class="content">
     <div class="text"><h1>Situação dos alunos de BTI</h1></div>
     <br>
-    <div class="text">
-      <h2>Bases de dados</h2>
-      <h4>Alunos com percentual de CH. cumprida</h3>
-      <h4>Relatório de ingressos, retenções e egressos</h3>
-      <h4>Relatório sintético de insucessos de alunos</h3><br>
-      <h5>Selecione as bases de dados na barra lateral</h4>
-    </div>
+    <section class="flex-container">
+      <div id="grafico_1" class="graficos" style="width: 600px; height: 160px;"></div>
+      <div id="grafico_2" class="graficos" style="width: 590px; height: 500px;"></div>
+      <div id="grafico_3" class="graficos" style="width: 600px; height: 320px; margin-top: -340px;"></div>
+    </section>
   </div>
 </div>
+

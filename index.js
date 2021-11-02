@@ -32,7 +32,33 @@ con.connect((err) => {
 
 // Rotas
 app.get("/", (req, res)=>{
-    res.render("home")
+    let insucessos = "SELECT SUM(Discentes) AS Discentes, SUM(Cancelamentos) AS Cancelamentos, SUM(Falta) AS Falta, SUM(Media) AS Media, SUM(`Media e Falta`) AS MediaFalta FROM relatorio_de_insucessos"
+    let trancamentos = "SELECT SUM(Total) AS Trancamentos FROM trancamentos_de_programa"
+    let cancelamentos = "SELECT SUM(Total) AS Cancelamentos FROM cancelamentos_de_programa"
+    let integralizacoes = "SELECT SUM(Total) AS Integralizações FROM integralizações_de_programa"
+    let discentes = "SELECT COUNT(*) AS Discentes FROM alunos_ch_cumprida"
+    let disciplinas = "SELECT COUNT(*) AS Disciplinas FROM relatorio_de_insucessos"
+
+    con.query(insucessos, (err, queryInsucessos, fields) =>{
+        con.query(trancamentos, (err, queryTrancamentos, fields) => {
+            con.query(cancelamentos, (err, queryCancelamentos, fields) => {
+                con.query(integralizacoes, (err, queryIntegralizacoes, fields) =>{
+                    con.query(discentes, (err, queryDiscentes, fields) =>{
+                        con.query(disciplinas, (err, queryDisciplinas, fields) =>{
+                            res.render("home", {
+                                dadosInsucessos: JSON.stringify(queryInsucessos),
+                                dadosTrancamentos: JSON.stringify(queryTrancamentos),
+                                dadosCancelamentos: JSON.stringify(queryCancelamentos),
+                                dadosIntegralizacoes: JSON.stringify(queryIntegralizacoes),
+                                dadosDiscentes: JSON.stringify(queryDiscentes),
+                                dadosDisciplinas: JSON.stringify(queryDisciplinas)
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    })
 })
 
 app.post("/ch_cumprida", (req, res) =>{
