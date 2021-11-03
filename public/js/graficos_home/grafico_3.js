@@ -53,7 +53,8 @@ am4core.ready(function() {
   let title = chart.titles.create();
   title.text = "Quantidade total";
   title.fontWeight = "bold";
-  title.fontFamily = "Segoe UI"
+  title.fontFamily = "Segoe UI";
+  title.fontSize = 24;
   title.align = "center";
   
   }); // end am4core.ready()

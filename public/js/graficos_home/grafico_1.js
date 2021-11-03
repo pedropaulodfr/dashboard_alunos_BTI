@@ -56,6 +56,7 @@ am4core.ready(function() {
     title.text = "Insucessos 2020.2";
     title.fontWeight = "bold";
     title.fontFamily = "Segoe UI"
+    title.fontSize = 24;
     title.align = "center";
     
     // Create axes
