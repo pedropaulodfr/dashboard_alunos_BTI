@@ -17,6 +17,7 @@ function drawChart() {
 
     var options = {
         title: "Mais reprovações relativas por Média",
+        hAxis: {title: 'Disciplinas que reprovaram pelo menos 30% de sua capacidade', titleTextStyle: {color: '#e28743'}},
         backgroundColor: "transparent",
         colors:['#00689b','#b3d3e2'],
         chartArea:{left:500, width: '100%'},
@@ -27,3 +28,4 @@ function drawChart() {
     var chart = new google.visualization.BarChart(document.getElementById("top_x_div_2"));
     chart.draw(view, options);
 }
+
