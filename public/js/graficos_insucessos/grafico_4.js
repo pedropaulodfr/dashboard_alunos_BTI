@@ -1,4 +1,4 @@
-var dadosGraficoRepFalta = [['Disciplinas', 'Falta']];
+var dadosGraficoRepFalta = [['Disciplinas', 'Reprovações']];
 for(let i = 0; i < dadosRepFalta.length; i++){
     let nome = dadosRepFalta[i].Nome;
     let falta = dadosRepFalta[i].Falta;

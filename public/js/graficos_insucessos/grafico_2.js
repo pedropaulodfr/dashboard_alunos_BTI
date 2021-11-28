@@ -1,4 +1,4 @@
-var dadosGraficoRepRelatMedia = [['Disciplinas', 'Media']];
+var dadosGraficoRepRelatMedia = [['Disciplinas', 'Reprovações']];
 for(let i = 0; i < dadosRepRelatMedia.length; i++){
     let nome = dadosRepRelatMedia[i].Nome;
     let media = dadosRepRelatMedia[i].Media;

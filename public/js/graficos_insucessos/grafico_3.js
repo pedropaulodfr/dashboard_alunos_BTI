@@ -1,4 +1,4 @@
-var dadosGraficoRepAbsMedia = [['Disciplinas', 'Media']];
+var dadosGraficoRepAbsMedia = [['Disciplinas', 'Reprovações']];
 for(let i = 0; i < dadosRepAbsMedia.length; i++){
     let nome = dadosRepAbsMedia[i].Nome;
     let media = dadosRepAbsMedia[i].Media;
