@@ -1,9 +1,9 @@
-var dadosGraficoCancelamentos = [['Disciplinas', 'Cancelamentos']];
-for(let i = 0; i < dadosCancelamentos.length; i++){
-    let nome = dadosCancelamentos[i].Nome;
-    let cancelamentos = dadosCancelamentos[i].Cancelamentos;
+var dadosGraficoInsucessos = [['Disciplinas', 'Insucessos']];
+for(let i = 0; i < dadosInsucessos.length; i++){
+    let nome = dadosInsucessos[i].Nome;
+    let cancelamentos = dadosInsucessos[i].Insucessos;
 
-    dadosGraficoCancelamentos.push([
+    dadosGraficoInsucessos.push([
         nome, cancelamentos,
     ]);
 }
@@ -11,12 +11,12 @@ for(let i = 0; i < dadosCancelamentos.length; i++){
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
-    var data = google.visualization.arrayToDataTable(dadosGraficoCancelamentos);
+    var data = google.visualization.arrayToDataTable(dadosGraficoInsucessos);
 
     var view = new google.visualization.DataView(data);
 
     var options = {
-        title: "Mais Cancelamentos absolutos",
+        title: "Mais Insucessos",
         backgroundColor: "transparent",
         colors:['#00689b','#b3d3e2'],
         chartArea:{left:500, width: '100%'},
@@ -24,6 +24,6 @@ function drawChart() {
         legend: { position: "none" },
     };
     
-    var chart = new google.visualization.BarChart(document.getElementById("top_x_div_7"));
+    var chart = new google.visualization.BarChart(document.getElementById("top_x_div_8"));
     chart.draw(view, options);
 }

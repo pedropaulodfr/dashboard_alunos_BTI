@@ -1,9 +1,9 @@
-var dadosGraficoCancelamentos = [['Disciplinas', 'Cancelamentos']];
-for(let i = 0; i < dadosCancelamentos.length; i++){
-    let nome = dadosCancelamentos[i].Nome;
-    let cancelamentos = dadosCancelamentos[i].Cancelamentos;
+var dadosGraficoCancelamentosRelat = [['Disciplinas', 'Cancelamentos']];
+for(let i = 0; i < dadosCancelamentosRelat.length; i++){
+    let nome = dadosCancelamentosRelat[i].Nome;
+    let cancelamentos = dadosCancelamentosRelat[i].Cancelamentos;
 
-    dadosGraficoCancelamentos.push([
+    dadosGraficoCancelamentosRelat.push([
         nome, cancelamentos,
     ]);
 }
@@ -11,12 +11,13 @@ for(let i = 0; i < dadosCancelamentos.length; i++){
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
-    var data = google.visualization.arrayToDataTable(dadosGraficoCancelamentos);
+    var data = google.visualization.arrayToDataTable(dadosGraficoCancelamentosRelat);
 
     var view = new google.visualization.DataView(data);
 
     var options = {
-        title: "Mais Cancelamentos",
+        title: "Mais Cancelamentos relativos",
+        hAxis: {title: 'Disciplinas em que pelo menos 30% dos discentes cancelaram', titleTextStyle: {color: '#e28743'}},
         backgroundColor: "transparent",
         colors:['#00689b','#b3d3e2'],
         chartArea:{left:500, width: '100%'},

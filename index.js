@@ -112,6 +112,7 @@ app.post("/insucessos", (req, res) =>{
     let repAbsMedia = "SELECT COUNT(*), Nome, Codigo, Media FROM relatorio_de_insucessos GROUP BY Codigo ORDER BY Media DESC LIMIT 10"
     let repFalta = "SELECT COUNT(*), Nome, Codigo, Falta FROM relatorio_de_insucessos WHERE Falta > 0 GROUP BY Codigo ORDER BY Falta DESC LIMIT 10"
     let repMediaFalta = "SELECT COUNT(*), Nome, Codigo, `Media e Falta` AS MediaFalta FROM relatorio_de_insucessos WHERE `Media e Falta` > 0 GROUP BY Codigo ORDER BY `Media e Falta` DESC LIMIT 10"
+    let cancelamentosRelat = "SELECT COUNT(*), Nome, Codigo, Cancelamentos, Discentes FROM relatorio_de_insucessos WHERE Cancelamentos >= ((Discentes*30)/100) AND Cancelamentos > 0 GROUP BY Codigo ORDER BY Cancelamentos DESC LIMIT 10"
     let cancelamentos = "SELECT COUNT(*), Nome, Codigo, Cancelamentos FROM relatorio_de_insucessos WHERE Cancelamentos > 0 GROUP BY Codigo ORDER BY Cancelamentos DESC LIMIT 10"
     let insucessos = "SELECT COUNT(*), Nome, Codigo, `Total Insucesso` AS Insucessos FROM relatorio_de_insucessos WHERE `Total Insucesso` > 0 GROUP BY Codigo ORDER BY `Total Insucesso` DESC LIMIT 10"
     let disciplinas = "SELECT COUNT(*) AS Turmas, Nome, Codigo FROM relatorio_de_insucessos GROUP BY Nome"
@@ -121,18 +122,21 @@ app.post("/insucessos", (req, res) =>{
             con.query(repAbsMedia, (err, queryRepAbsMedia, fields)=>{
                 con.query(repFalta, (err, queryRepFalta, fields)=>{
                     con.query(repMediaFalta, (err, queryRepMediaFalta, fields)=>{
-                        con.query(cancelamentos, (err, queryCancelamentos, fields)=>{
-                            con.query(insucessos, (err, queryInsucessos, fields)=>{
-                                con.query(disciplinas, (err, queryDisciplinas, fields)=>{
-                                    res.render("insucessos", {
-                                        dadosDiscentes: JSON.stringify(queryDiscentes),
-                                        dadosRepRelatMedia: JSON.stringify(queryRepRelatMedia),
-                                        dadosRepAbsMedia: JSON.stringify(queryRepAbsMedia),
-                                        dadosRepFalta: JSON.stringify(queryRepFalta),
-                                        dadosRepMediaFalta: JSON.stringify(queryRepMediaFalta),
-                                        dadosCancelamentos: JSON.stringify(queryCancelamentos),
-                                        dadosInsucessos: JSON.stringify(queryInsucessos),
-                                        dadosDisciplinas: JSON.stringify(queryDisciplinas),
+                        con.query(cancelamentosRelat, (err, queryCancelamentosRelat, fields) =>{
+                            con.query(cancelamentos, (err, queryCancelamentos, fields)=>{
+                                con.query(insucessos, (err, queryInsucessos, fields)=>{
+                                    con.query(disciplinas, (err, queryDisciplinas, fields)=>{
+                                        res.render("insucessos", {
+                                            dadosDiscentes: JSON.stringify(queryDiscentes),
+                                            dadosRepRelatMedia: JSON.stringify(queryRepRelatMedia),
+                                            dadosRepAbsMedia: JSON.stringify(queryRepAbsMedia),
+                                            dadosRepFalta: JSON.stringify(queryRepFalta),
+                                            dadosRepMediaFalta: JSON.stringify(queryRepMediaFalta),
+                                            dadosCancelamentosRelat: JSON.stringify(queryCancelamentosRelat),
+                                            dadosCancelamentos: JSON.stringify(queryCancelamentos),
+                                            dadosInsucessos: JSON.stringify(queryInsucessos),
+                                            dadosDisciplinas: JSON.stringify(queryDisciplinas),
+                                        })
                                     })
                                 })
                             })
