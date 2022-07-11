@@ -1,0 +1,12 @@
+.piechart{
+    width: max(614px, 40vw);
+    height: 300px;
+}
+.donutchart{
+    width: max(614px, 40vw);
+    height: 300px;
+}
+.curve_chart{
+    width: max(1250px, 81.5vw);
+    height: 300px;
+}
