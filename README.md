@@ -31,22 +31,22 @@
 
 ### Tecnologias
 
-HTML
-JavaScript
-CSS
-Node.js
-Express
-Handlebars
-Body Parser
-Google Charts
-AmCharts
-XAMPP
-MySQL
+HTML,
+JavaScript,
+CSS,
+Node.js,
+Express,
+Handlebars,
+Body Parser,
+Google Charts,
+AmCharts,
+XAMPP,
+MySQL,
 
 ### Pré-requisitos
 
-Express
-Handlebars
+Express,
+Handlebars,
 Body Parser
 
 
